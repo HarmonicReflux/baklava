@@ -1,6 +1,32 @@
 # Changes here will be overwritten by Copier
+SelectCitation:
+- AddCitationFile_flag
+- AddCFFConvert_flag
+SelectCodeQualityFeatures:
+- AddLocalTests_flag
+- SelectGitHubActions_flag
+- AddLinting_flag
+- AddPreCommit_flag
+- AddSonarCloud_flag
+- AddEditorConfig_flag
+SelectCommunityFeatures:
+- AddCodeConduct_flag
+- AddContributing_flag
+SelectDocumentationFeatures:
+- AddLocalDocumentation_flag
+- AddOnlineDocumentation_flag
+- AddDevDoc_flag
+- AddGitHubActionDocumentation_flag
+SelectGitHubActions:
+- AddGitHubActionBuild_flag
+- AddLinkCheck_flag
+SelectPublishReleaseFeatures:
+- SelectCitation_flag
+- AddChangeLog_flag
+- AddZenodo_flag
 _commit: 0.6.1
 _src_path: https://github.com/nlesc/python-template.git
+code_of_conduct_email: hello@universe.com
 copyright_holder: Benjamin Johannes Scharpf
 email: hello@universe.com
 full_name: Benjamin Johannes Scharpf
@@ -9,5 +35,5 @@ keywords: dessert, sweet
 license: Apachev2
 package_name: baklava
 package_short_description: A sweet package
-template_profile: minimum
+template_profile: ask
 version: 0.1.0

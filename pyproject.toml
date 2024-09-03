@@ -35,8 +35,20 @@ version = "0.1.0"
 dev = [
     "build",  # build is not only used in publishing (below), but also in the template's test suite
     "bump-my-version",
+    "coverage [toml]",
+    "pytest",
+    "pytest-cov",
     "ruff",
+    "sphinx",
+    "sphinx_rtd_theme",
+    "sphinx-autoapi",
     "tox",
+    "myst_parser",
+]
+docs = [
+    "sphinx",
+    "sphinx_rtd_theme",
+    "sphinx-autoapi",
     "myst_parser",
 ]
 publishing = [
@@ -48,22 +60,32 @@ publishing = [
 [project.urls]
 Repository = "https://github.com/HarmonicReflux/baklava"
 Issues = "https://github.com/HarmonicReflux/baklava/issues"
+Changelog = "https://github.com/HarmonicReflux/baklava/CHANGELOG.md"
+ReadTheDocs = "https://baklava.readthedocs.io"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
 
 
-
-
+[tool.coverage.run]
+branch = true
+source = ["src/baklava"]
+command_line = "-m pytest"
 
 [tool.tox]
 legacy_tox_ini = """
 [tox]
 envlist = py38,py39,py310,py311,py312
 skip_missing_interpreters = true
-
+[testenv]
+commands = pytest
+extras = dev
 """
 
 [tool.ruff]
 line-length = 120
 output-format = "concise"
+extend-exclude = ["docs"]
 
 [tool.ruff.lint]
 # Allow unused variables when underscore-prefixed.
@@ -110,6 +132,8 @@ filename = "src/baklava/__init__.py"
 [[tool.bumpversion.files]]
 filename = "pyproject.toml"
 
+[[tool.bumpversion.files]]
+filename = "CITATION.cff"
 
-
-
+[[tool.bumpversion.files]]
+filename = "docs/conf.py"
