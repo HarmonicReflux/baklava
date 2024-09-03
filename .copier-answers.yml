@@ -1,0 +1,13 @@
+# Changes here will be overwritten by Copier
+_commit: 0.6.1
+_src_path: https://github.com/nlesc/python-template.git
+copyright_holder: Benjamin Johannes Scharpf
+email: hello@universe.com
+full_name: Benjamin Johannes Scharpf
+github_organization: HarmonicReflux
+keywords: dessert, sweet
+license: Apachev2
+package_name: baklava
+package_short_description: A sweet package
+template_profile: minimum
+version: 0.1.0
